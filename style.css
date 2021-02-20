@@ -10,6 +10,7 @@
 	--background-primary: #fff;
 	--background-secondary: #f7f7f7;
     --background-tertiary: #efefef;
+    --border-primary: #000;
 }
 html {
     position: absolute;
@@ -22,42 +23,51 @@ body {
 	color: var(--text-primary);
 	line-height: 2.5rem;
 }
-
 h1 {
 	color: var(--title-primary);
 }
-
-.header__title {
-	font-weight: normal;
-	text-align: center;
-}
-
 .flex-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 95%;
-  margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 95%;
+    margin: auto;
 }
 
+/* Nav */
+.nav header {
+    text-align: center;
+}
+.nav__title {
+    font-weight: normal;
+}
+.nav__title a {
+    text-decoration: none;
+    color: var(--title-primary);
+}
+.nav__subtitle {
+    margin-top: -15px;
+    font-size: smaller;
+    color: var(--text-primary);
+}
 .nav__list {
     height: 20rem;
     overflow: scroll;
 	margin: 0 0 4rem 0;
 	padding: 0;
-    border: 1px solid black;
+    border: 1px solid var(--border-primary);
 }
-.nav__list li {
+.nav__item {
     list-style: none;
 }
-.nav__list a {
+.nav__link {
 	display: block;
 	text-decoration: none;
 	color: var(--link-primary);
 	border-bottom: 1px solid var(--link-primary);
 	padding: .8rem 2.8rem;
 }
-.nav__list a:hover {
+.nav__link:hover {
     color: var(--link-secondary);
     background-color: var(--background-tertiary);
 }
@@ -65,11 +75,21 @@ h1 {
 .main {
     margin: 0 0 10rem 0;
 }
+img {
+    width: 100%;
+    max-width: 500px;
+}
 section header {
 	font-size: 2.8rem;
 	color: var(--title-primary);
 }
 
+/* Hero */
+.hero {
+    margin-bottom: 3rem;
+}
+
+/* Article */
 article {
 	padding: 0 0 0 1.5rem;
 }
@@ -85,6 +105,8 @@ article li {
 	padding-bottom: 1rem;
 }
 
+
+/* For larger screens */
 @media (min-width: 815px) {
     .flex-container {
       flex-direction: row;
@@ -96,7 +118,7 @@ article li {
       width: auto;
       border-right: 2px solid var(--link-primary);
     }
-    .fixed-top {
+    .nav--fixed {
         position: fixed;
     }
     .nav__list {
@@ -107,7 +129,7 @@ article li {
         padding: 0;
         border-right: none;
     }
-    .nav__list li:last-child a {
+    .nav__item:last-child a {
         border-bottom: none;
     }
 
