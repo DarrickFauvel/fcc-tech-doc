@@ -93,7 +93,11 @@ section header {
 article {
 	padding: 0 0 0 1.5rem;
 }
-article code {
+code {
+    background-color: var(--background-secondary);
+    padding: 0 .5rem;
+}
+.article__code {
 	display: block;
 	background-color: var(--background-secondary);
 	position: relative;
